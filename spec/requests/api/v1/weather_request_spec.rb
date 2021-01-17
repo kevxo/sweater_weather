@@ -14,5 +14,21 @@ describe 'Weather API' do
     get "/api/v1/forcast?location=#{location}"
 
     expect(response).to be_successful
+
+    json = JSON.parse(response.body, symbolize_names: true)
+
+    weather = json[:data][:attributes]
+
+    expect(weather).to have_key :current_weather
+    expect(weather[:current_weather]).to be_a Hash
+    expected = %i[datetime sunrise sunset temperature feels_like humidity uvi visibility conditions
+                  icon]
+    expect(weather[:current_weather].keys).to eq(expected)
+    expect(weather).to have_key :daily_weather
+    expect(weather[:daily_weather]).to be_a Array
+    expect(weather[:daily_weather].count).to eq(5)
+    expect(weather).to have_key :hourly_weather
+    expect(weather[:hourly_weather]).to be_a Array
+    expect(weather[:hourly_weather].count).to eq(8)
   end
 end
