@@ -7,4 +7,9 @@ class SearchFacade
     json = WeatherService.forcast(lat, lon)
     Forcast.new(json)
   end
+
+  def self.get_image(location)
+    data = ImageService.get_image(location)
+    Image.new(data, location)
+  end
 end
