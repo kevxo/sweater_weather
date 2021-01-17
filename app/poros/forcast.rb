@@ -1,12 +1,13 @@
 require 'date'
 class Forcast
+  attr_reader :current_weather, :daily_weather, :hourly_weather
   def initialize(data)
-    @current = current(data[:current])
-    @daily_weather = daily_weather(data[:daily])
-    @hourly = hourly(data[:hourly])
+    @current_weather = current_format(data[:current])
+    @daily_weather = daily_weather_format(data[:daily])
+    @hourly_weather = hourly_format(data[:hourly])
   end
 
-  def current(data)
+  def current_format(data)
     {
       datetime: Time.at(data[:dt]),
       sunrise: Time.at(data[:sunrise]),
@@ -21,7 +22,7 @@ class Forcast
     }
   end
 
-  def daily_weather(data)
+  def daily_weather_format(data)
     data.first(5).map do |attr|
       {
         date: Time.at(attr[:dt]).strftime('%F'),
@@ -41,7 +42,7 @@ class Forcast
     arr[(val % 16)]
   end
 
-  def hourly(data)
+  def hourly_format(data)
     data.first(8).map do |attr|
       {
         time: Time.at(attr[:dt]).strftime('%H-%M-%S'),
