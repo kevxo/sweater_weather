@@ -21,7 +21,7 @@ describe 'Roadtrip Api' do
     user = JSON.parse(response.body, symbolize_names: true)[:data][:attributes]
 
     json_response = File.read('spec/fixtures/travel.json')
-    stub_request(:get, 'http://www.mapquestapi.com/directions/api/v2/routes?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
+    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
       .to_return(status: 200, body: json_response, headers: {})
 
     trip = {
@@ -79,7 +79,7 @@ describe 'Roadtrip Api' do
     user = JSON.parse(response.body, symbolize_names: true)[:data][:attributes]
 
     json_response = File.read('spec/fixtures/impossibletravel.json')
-    stub_request(:get, 'http://www.mapquestapi.com/directions/api/v2/routes?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=London,UK')
+    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=London,UK')
       .to_return(status: 200, body: json_response, headers: {})
 
     trip = {
@@ -134,7 +134,7 @@ describe 'Roadtrip Api' do
                              headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     json_response = File.read('spec/fixtures/travel.json')
-    stub_request(:get, 'http://www.mapquestapi.com/directions/api/v2/routes?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
+    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
       .to_return(status: 200, body: json_response, headers: {})
 
     trip = {

@@ -42,7 +42,7 @@ describe SearchFacade do
 
   it 'returns a correct route RoadTrip object' do
     json_response = File.read('spec/fixtures/travel.json')
-    stub_request(:get, 'http://www.mapquestapi.com/directions/api/v2/routes?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
+    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
       .to_return(status: 200, body: json_response, headers: {})
 
     from = 'Denver,CO'
@@ -76,7 +76,7 @@ describe SearchFacade do
 
   it 'returns a correct route RoadTrip object with less than 3600 time' do
     json_response = File.read('spec/fixtures/travel_boulder.json')
-    stub_request(:get, 'http://www.mapquestapi.com/directions/api/v2/routes?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Boulder,CO')
+    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Boulder,CO')
       .to_return(status: 200, body: json_response, headers: {})
 
     from = 'Denver,CO'
@@ -110,7 +110,7 @@ describe SearchFacade do
 
   it 'returns a incorrect RoadTrip object' do
     json_response = File.read('spec/fixtures/impossibletravel.json')
-    stub_request(:get, 'http://www.mapquestapi.com/directions/api/v2/routes?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=London,UK')
+    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=London,UK')
       .to_return(status: 200, body: json_response, headers: {})
 
     from = 'Denver,CO'
