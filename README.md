@@ -18,6 +18,12 @@
   - Make sure you have rbenv install 2.5.3. and Rails version 5.2.4.3
   -  bundle install, rails db:{drop,create,migrate,seed}
   - Have postman and hit rails s in terminal. Use the endpoints below.
+  - Retrieve 3 API KEYS from
+      - [MapQuest API](https://developer.mapquest.com/documentation/geocoding-api/)
+      - [OpenWeather API](https://openweathermap.org/api/one-call-api)
+
+      - [Pixels API](https://www.pexels.com/api/)
+
 
 ## Endpoints
  ### Retrieve weather for a city
