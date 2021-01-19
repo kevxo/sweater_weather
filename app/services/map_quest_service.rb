@@ -1,7 +1,6 @@
 class MapQuestService
   def self.get_lon_lat(location)
     response = conn.get('/geocoding/v1/address') do |req|
-      req.params[:key] = ENV['KEY']
       req.params[:location] = location
     end
 
@@ -10,8 +9,7 @@ class MapQuestService
   end
 
   def self.get_estimated_time(from, to)
-    response = conn.get('/directions/api/v2/routes') do |req|
-      req.params[:key] = ENV['KEY']
+    response = conn.get('/directions/v2/route') do |req|
       req.params[:from] = from
       req.params[:to] = to
     end
@@ -25,6 +23,8 @@ class MapQuestService
   end
 
   def self.conn
-    Faraday.new(url: 'http://www.mapquestapi.com')
+    Faraday.new(url: 'http://www.mapquestapi.com') do |req|
+      req.params[:key] = ENV['KEY']
+    end
   end
 end
