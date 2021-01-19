@@ -70,7 +70,7 @@ describe 'User API' do
     expect(json.first).to eq("Email can't be blank")
   end
 
-  it 'user can login and will get error if login si incorrect' do
+  it 'user can login and will get error if login is incorrect' do
     user = {
       "email": 'whatever@example.com',
       "password": 'password',
