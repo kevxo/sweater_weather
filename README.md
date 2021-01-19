@@ -23,6 +23,7 @@
       - [OpenWeather API](https://openweathermap.org/api/one-call-api)
 
       - [Pixels API](https://www.pexels.com/api/)
+  - fiagro Install to save you api keys
 
 
 ## Endpoints
