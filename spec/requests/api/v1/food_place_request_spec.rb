@@ -42,8 +42,15 @@ describe 'Munchie API' do
                               headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     json_response = File.read('spec/fixtures/food.json')
-    stub_request(:get, 'https://api.yelp.com/v3/businesses/search?authorization=Bearer%20UIdE7EkbP142pwgOjCirtfWoggDB_KpdbVTMCd-1COfbImfdAaLRHe9EdCfL12LqcfuAHTDo8ptn-TVc9xwvR7_fBg4RZREb-0bIq3iO391YdIsfXct9abzFPEYGYHYx&location=Pueblo,CO&open_now=true&term=chinese')
-      .to_return(status: 200, body: json_response, headers: {})
+    stub_request(:get, "https://api.yelp.com/v3/businesses/search?location=Pueblo,CO&open_now=true&term=chinese").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'Authorization'=>'Bearer UIdE7EkbP142pwgOjCirtfWoggDB_KpdbVTMCd-1COfbImfdAaLRHe9EdCfL12LqcfuAHTDo8ptn-TVc9xwvR7_fBg4RZREb-0bIq3iO391YdIsfXct9abzFPEYGYHYx',
+       	  'User-Agent'=>'Faraday v1.3.0'
+           }).
+         to_return(status: 200, body: json_response, headers: {})
 
     start = 'Denver,CO'
     end_spot = 'Pueblo,CO'
