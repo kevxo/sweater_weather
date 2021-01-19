@@ -51,5 +51,19 @@ describe 'Munchie API' do
     get "/api/v1/munchies?start=#{start}&end=#{end_spot}&food=#{type}"
 
     expect(response).to be_successful
+
+    json = JSON.parse(response.body, symbolize_names: true)
+
+    expect(json).to be_a Hash
+    expect(json).to have_key :data
+    expect(json[:data]).to have_key :id
+    expect(json[:data][:id]).to eq(nil)
+    expect(json[:data]).to have_key :attributes
+    expected = %i[destination_city travel_time forecast restaurant]
+    expect(json[:data][:attributes].keys).to eq(expected)
+    expect(json[:data][:attributes][:destination_city]).to be_a String
+    expect(json[:data][:attributes][:travel_time]).to be_a String
+    expect(json[:data][:attributes][:forecast]).to be_a Hash
+    expect(json[:data][:attributes][:restaurant]).to be_a Hash
   end
 end

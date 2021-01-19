@@ -12,7 +12,7 @@ class FoodPlaceService
 
   def self.conn
     Faraday.new(url: 'https://api.yelp.com') do |req|
-      req.params[:authorization] = ENV['YELPKEY']
+      req.headers[:Authorization] = ENV['YELPKEY']
     end
   end
 end
