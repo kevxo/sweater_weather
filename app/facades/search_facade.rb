@@ -26,7 +26,8 @@ class SearchFacade
 
   def self.food_place_destination(start, end_place, food)
     trip = road_trip(start, end_place)
-    restaurant = FoodPlaceService.get_food_places(end_place, food)
+    time = Time.now.to_i + trip.travel_time.to_i
+    restaurant = FoodPlaceService.get_food_places(end_place, food, time)
     Munchie.new(trip, restaurant)
   end
 end

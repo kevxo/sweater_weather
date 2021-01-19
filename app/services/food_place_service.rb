@@ -1,9 +1,9 @@
 class FoodPlaceService
-  def self.get_food_places(location, term)
+  def self.get_food_places(location, term, time)
     response = conn.get('/v3/businesses/search') do |req|
       req.params[:location] = location
       req.params[:term] = term
-      req.params[:open_now] = 'true'
+      req.params[:open_at] = time
     end
 
     json = JSON.parse(response.body, symbolize_names: true)
