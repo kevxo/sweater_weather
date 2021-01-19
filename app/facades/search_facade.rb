@@ -23,4 +23,10 @@ class SearchFacade
     weather = Forcast.new(forcast)
     RoadTrip.new(from, to, real_time, weather)
   end
+
+  def self.food_place_destination(start, end_place, food)
+    trip = road_trip(start, end_place)
+    restaurant = FoodPlaceService.get_food_places(end_place, food)
+    Munchie.new(trip, restaurant)
+  end
 end
