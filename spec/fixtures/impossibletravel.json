@@ -1,0 +1,19 @@
+{
+  "route": {
+      "routeError": {
+          "errorCode": 2,
+          "message": ""
+      }
+  },
+  "info": {
+      "statuscode": 402,
+      "copyright": {
+          "imageAltText": "© 2020 MapQuest, Inc.",
+          "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+          "text": "© 2020 MapQuest, Inc."
+      },
+      "messages": [
+          "We are unable to route with the given locations."
+      ]
+  }
+}

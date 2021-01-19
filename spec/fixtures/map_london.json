@@ -1,0 +1,325 @@
+{
+  "info": {
+      "statuscode": 0,
+      "copyright": {
+          "text": "© 2021 MapQuest, Inc.",
+          "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+          "imageAltText": "© 2021 MapQuest, Inc."
+      },
+      "messages": []
+  },
+  "options": {
+      "maxResults": -1,
+      "thumbMaps": true,
+      "ignoreLatLngInput": false
+  },
+  "results": [
+      {
+          "providedLocation": {
+              "location": "London,UK"
+          },
+          "locations": [
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "London",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/3706",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 51.50015,
+                      "lng": -0.12624
+                  },
+                  "displayLatLng": {
+                      "lat": 51.50015,
+                      "lng": -0.12624
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=51.50015,-0.12624|marker-sm-50318A-1&scalebar=true&zoom=12&rand=836972717"
+              },
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "Longhope",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/6082",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 51.86317,
+                      "lng": -2.43131
+                  },
+                  "displayLatLng": {
+                      "lat": 51.86317,
+                      "lng": -2.43131
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=51.86317,-2.43131|marker-sm-50318A-2&scalebar=true&zoom=12&rand=-2100352527"
+              },
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "Grimsby",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/6773",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 53.59463,
+                      "lng": -0.21142
+                  },
+                  "displayLatLng": {
+                      "lat": 53.59463,
+                      "lng": -0.21142
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=53.59463,-0.21142|marker-sm-50318A-3&scalebar=true&zoom=12&rand=-1098694097"
+              },
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "Lechlade",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/9863",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 51.6953,
+                      "lng": -1.69542
+                  },
+                  "displayLatLng": {
+                      "lat": 51.6953,
+                      "lng": -1.69542
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=51.6953,-1.69542|marker-sm-50318A-4&scalebar=true&zoom=12&rand=1942361516"
+              },
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "Heathfield",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/11758",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 50.95609,
+                      "lng": 0.23479
+                  },
+                  "displayLatLng": {
+                      "lat": 50.95609,
+                      "lng": 0.23479
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=50.95609,0.23479|marker-sm-50318A-5&scalebar=true&zoom=12&rand=1561480033"
+              },
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "Saint Alban's",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/16075",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 51.72565,
+                      "lng": -0.29746
+                  },
+                  "displayLatLng": {
+                      "lat": 51.72565,
+                      "lng": -0.29746
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=51.72565,-0.29746|marker-sm-50318A-6&scalebar=true&zoom=12&rand=2024962001"
+              },
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "Saint Austell",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/18580",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 50.31776,
+                      "lng": -4.80014
+                  },
+                  "displayLatLng": {
+                      "lat": 50.31776,
+                      "lng": -4.80014
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=50.31776,-4.80014|marker-sm-50318A-7&scalebar=true&zoom=12&rand=591743551"
+              },
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "Andover",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/18898",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 51.24574,
+                      "lng": -1.45958
+                  },
+                  "displayLatLng": {
+                      "lat": 51.24574,
+                      "lng": -1.45958
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=51.24574,-1.45958|marker-sm-50318A-8&scalebar=true&zoom=12&rand=1838796615"
+              },
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "Tadley",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/21457",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 51.33122,
+                      "lng": -1.10754
+                  },
+                  "displayLatLng": {
+                      "lat": 51.33122,
+                      "lng": -1.10754
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=51.33122,-1.10754|marker-sm-50318A-9&scalebar=true&zoom=12&rand=533209600"
+              },
+              {
+                  "street": "",
+                  "adminArea6": "",
+                  "adminArea6Type": "Neighborhood",
+                  "adminArea5": "London",
+                  "adminArea5Type": "City",
+                  "adminArea4": "",
+                  "adminArea4Type": "County",
+                  "adminArea3": "ENG",
+                  "adminArea3Type": "State",
+                  "adminArea1": "GB",
+                  "adminArea1Type": "Country",
+                  "postalCode": "",
+                  "geocodeQualityCode": "A5XAX",
+                  "geocodeQuality": "CITY",
+                  "dragPoint": false,
+                  "sideOfStreet": "N",
+                  "linkId": "GB/GEO/p0/8325",
+                  "unknownInput": "",
+                  "type": "s",
+                  "latLng": {
+                      "lat": 51.51333,
+                      "lng": -0.08895
+                  },
+                  "displayLatLng": {
+                      "lat": 51.51333,
+                      "lng": -0.08895
+                  },
+                  "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&type=map&size=225,160&locations=51.51333,-0.08895|marker-sm-50318A-10&scalebar=true&zoom=12&rand=-1166056356"
+              }
+          ]
+      }
+  ]
+}
