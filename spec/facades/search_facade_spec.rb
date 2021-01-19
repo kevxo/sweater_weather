@@ -130,4 +130,40 @@ describe SearchFacade do
     expected = {}
     expect(roadtrip.weather_at_eta).to eq(expected)
   end
+
+  it 'returns a Munchie Object' do
+    start = 'Denver,CO'
+    end_place = 'Pueblo,CO'
+    food = 'chinese'
+
+    json_response = File.read('spec/fixtures/travel.json')
+    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
+      .to_return(status: 200, body: json_response, headers: {})
+
+    json_response = File.read('spec/fixtures/map_quest2.json')
+    stub_request(:get, 'http://www.mapquestapi.com/geocoding/v1/address?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&location=Pueblo,CO')
+      .to_return(status: 200, body: json_response, headers: {})
+
+    json_response2 = File.read('spec/fixtures/open_weather2.json')
+    stub_request(:get, 'https://api.openweathermap.org/data/2.5/onecall?appid=88e6c754c08a30bee68f196402bd793a&exclude=minutely,alerts&lat=38.265425&lon=-104.610415&units=imperial')
+      .to_return(status: 200, body: json_response2, headers: {})
+
+    json_response = File.read('spec/fixtures/food.json')
+    stub_request(:get, 'https://api.yelp.com/v3/businesses/search?authorization=Bearer%20UIdE7EkbP142pwgOjCirtfWoggDB_KpdbVTMCd-1COfbImfdAaLRHe9EdCfL12LqcfuAHTDo8ptn-TVc9xwvR7_fBg4RZREb-0bIq3iO391YdIsfXct9abzFPEYGYHYx&location=Pueblo,CO&open_now=true&term=chinese')
+      .to_return(status: 200, body: json_response, headers: {})
+
+    munchie = SearchFacade.food_place_destination(start, end_place, food)
+
+    expect(munchie).to be_a Munchie
+    expect(munchie.destination_city).to eq(end_place)
+    expect(munchie.travel_time).to eq('1 hour, 52 minutes')
+    expect(munchie.forecast).to be_a Hash
+    expected = %i[temperature conditions]
+    expect(munchie.forecast.keys).to eq(expected)
+    expect(munchie.restaurant).to be_a Hash
+    expected = %i[name address]
+    expect(munchie.restaurant.keys).to eq(expected)
+    expect(munchie.restaurant[:name]).to be_a String
+    expect(munchie.restaurant[:address]).to be_a String
+  end
 end
