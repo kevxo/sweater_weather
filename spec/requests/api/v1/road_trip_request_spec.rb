@@ -2,24 +2,7 @@ require 'rails_helper'
 
 describe 'Roadtrip Api' do
   it 'can create a roadtrip' do
-    user = {
-      "email": 'whatever@example.com',
-      "password": 'password',
-      "password_confirmation": 'password'
-    }
-    post '/api/v1/users', params: user.to_json,
-                          headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
-
-    user = {
-      "email": 'whatever@example.com',
-      "password": 'password'
-    }
-
-    post '/api/v1/sessions', params: user.to_json,
-                             headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
-
-    user = JSON.parse(response.body, symbolize_names: true)[:data][:attributes]
-
+    user = User.create(email: 'whatever_email@123.com', password: 'password')
     json_response = File.read('spec/fixtures/travel.json')
     stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
       .to_return(status: 200, body: json_response, headers: {})
@@ -27,7 +10,7 @@ describe 'Roadtrip Api' do
     trip = {
       "origin": 'Denver,CO',
       "destination": 'Pueblo,CO',
-      "api_key": user[:api_key]
+      "api_key": user.api_key
     }
 
     json_response = File.read('spec/fixtures/map_quest2.json')
@@ -60,24 +43,7 @@ describe 'Roadtrip Api' do
   end
 
   it 'cannot create impossible trip' do
-    user = {
-      "email": 'whatever@example.com',
-      "password": 'password',
-      "password_confirmation": 'password'
-    }
-    post '/api/v1/users', params: user.to_json,
-                          headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
-
-    user = {
-      "email": 'whatever@example.com',
-      "password": 'password'
-    }
-
-    post '/api/v1/sessions', params: user.to_json,
-                             headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
-
-    user = JSON.parse(response.body, symbolize_names: true)[:data][:attributes]
-
+    user = User.create(email: 'whatever_email@123.com', password: 'password')
     json_response = File.read('spec/fixtures/impossibletravel.json')
     stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=London,UK')
       .to_return(status: 200, body: json_response, headers: {})
@@ -85,7 +51,7 @@ describe 'Roadtrip Api' do
     trip = {
       "origin": 'Denver,CO',
       "destination": 'London,UK',
-      "api_key": user[:api_key]
+      "api_key": user.api_key
     }
 
     json_response = File.read('spec/fixtures/map_london.json')
@@ -117,22 +83,6 @@ describe 'Roadtrip Api' do
   end
 
   it 'gives incorrect api_key' do
-    user = {
-      "email": 'whatever@example.com',
-      "password": 'password',
-      "password_confirmation": 'password'
-    }
-    post '/api/v1/users', params: user.to_json,
-                          headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
-
-    user = {
-      "email": 'whatever@example.com',
-      "password": 'password'
-    }
-
-    post '/api/v1/sessions', params: user.to_json,
-                             headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
-
     json_response = File.read('spec/fixtures/travel.json')
     stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
       .to_return(status: 200, body: json_response, headers: {})
