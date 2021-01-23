@@ -4,7 +4,7 @@ describe 'Roadtrip Api' do
   it 'can create a roadtrip' do
     user = User.create(email: 'whatever_email@123.com', password: 'password')
     json_response = File.read('spec/fixtures/travel.json')
-    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
+    stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=#{ENV['KEY']}&to=Pueblo,CO")
       .to_return(status: 200, body: json_response, headers: {})
 
     trip = {
@@ -14,11 +14,11 @@ describe 'Roadtrip Api' do
     }
 
     json_response = File.read('spec/fixtures/map_quest2.json')
-    stub_request(:get, 'http://www.mapquestapi.com/geocoding/v1/address?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&location=Pueblo,CO')
+    stub_request(:get, "http://www.mapquestapi.com/geocoding/v1/address?key=#{ENV['KEY']}&location=Pueblo,CO")
       .to_return(status: 200, body: json_response, headers: {})
 
     json_response2 = File.read('spec/fixtures/open_weather2.json')
-    stub_request(:get, 'https://api.openweathermap.org/data/2.5/onecall?appid=88e6c754c08a30bee68f196402bd793a&exclude=minutely,alerts&lat=38.265425&lon=-104.610415&units=imperial')
+    stub_request(:get, "https://api.openweathermap.org/data/2.5/onecall?appid=#{ENV['APPID']}&exclude=minutely,alerts&lat=38.265425&lon=-104.610415&units=imperial")
       .to_return(status: 200, body: json_response2, headers: {})
 
     post '/api/v1/road_trip', params: trip.to_json,
@@ -45,7 +45,7 @@ describe 'Roadtrip Api' do
   it 'cannot create impossible trip' do
     user = User.create(email: 'whatever_email@123.com', password: 'password')
     json_response = File.read('spec/fixtures/impossibletravel.json')
-    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=London,UK')
+    stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=#{ENV['KEY']}&to=London,UK")
       .to_return(status: 200, body: json_response, headers: {})
 
     trip = {
@@ -55,11 +55,11 @@ describe 'Roadtrip Api' do
     }
 
     json_response = File.read('spec/fixtures/map_london.json')
-    stub_request(:get, 'http://www.mapquestapi.com/geocoding/v1/address?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&location=London,UK')
+    stub_request(:get, "http://www.mapquestapi.com/geocoding/v1/address?key=#{ENV['KEY']}&location=London,UK")
       .to_return(status: 200, body: json_response, headers: {})
 
     json_response2 = File.read('spec/fixtures/london_weather.json')
-    stub_request(:get, 'https://api.openweathermap.org/data/2.5/onecall?appid=88e6c754c08a30bee68f196402bd793a&exclude=minutely,alerts&lat=51.51333&lon=-0.08895&units=imperial')
+    stub_request(:get, "https://api.openweathermap.org/data/2.5/onecall?appid=#{ENV['APPID']}&exclude=minutely,alerts&lat=51.51333&lon=-0.08895&units=imperial")
       .to_return(status: 200, body: json_response2, headers: {})
 
     post '/api/v1/road_trip', params: trip.to_json,
@@ -84,7 +84,7 @@ describe 'Roadtrip Api' do
 
   it 'gives incorrect api_key' do
     json_response = File.read('spec/fixtures/travel.json')
-    stub_request(:get, 'http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO')
+    stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=#{ENV['KEY']}&to=Pueblo,CO")
       .to_return(status: 200, body: json_response, headers: {})
 
     trip = {
