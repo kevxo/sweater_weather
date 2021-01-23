@@ -3,7 +3,7 @@ require 'rails_helper'
 describe MapQuestService do
   it 'return lon and lat data' do
     json_response = File.read('spec/fixtures/map_quest.json')
-    stub_request(:get, 'http://www.mapquestapi.com/geocoding/v1/address?key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&location=denver,co')
+    stub_request(:get, "http://www.mapquestapi.com/geocoding/v1/address?key=#{ENV['KEY']}&location=denver,co")
       .to_return(status: 200, body: json_response, headers: {})
 
     search = MapQuestService.get_lon_lat('denver,co')
@@ -20,7 +20,7 @@ describe MapQuestService do
     from = 'Denver,CO'
     to = 'Pueblo,CO'
     json_response = File.read('spec/fixtures/travel.json')
-    stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=Pueblo,CO")
+    stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=#{ENV['KEY']}&to=Pueblo,CO")
       .to_return(status: 200, body: json_response, headers: {})
 
     search = MapQuestService.get_estimated_time(from, to)
@@ -31,7 +31,7 @@ describe MapQuestService do
     from = 'Denver,CO'
     to = 'London,UK'
     json_response = File.read('spec/fixtures/impossibletravel.json')
-    stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Wizb13EM9er7D6EtOktCFlEJSYC2w1c5&to=London,UK")
+    stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=#{ENV['KEY']}&to=London,UK")
       .to_return(status: 200, body: json_response, headers: {})
 
     search = MapQuestService.get_estimated_time(from, to)

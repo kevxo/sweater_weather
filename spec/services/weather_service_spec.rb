@@ -5,7 +5,7 @@ describe WeatherService do
     lat = '39.738453'
     lon = '-104.984853'
     json_response2 = File.read('spec/fixtures/open_weather.json')
-    stub_request(:get, 'https://api.openweathermap.org/data/2.5/onecall?appid=88e6c754c08a30bee68f196402bd793a&exclude=minutely,alerts&lat=39.738453&lon=-104.984853&units=imperial')
+    stub_request(:get, "https://api.openweathermap.org/data/2.5/onecall?appid=#{ENV['APPID']}&exclude=minutely,alerts&lat=39.738453&lon=-104.984853&units=imperial")
       .to_return(status: 200, body: json_response2, headers: {})
 
     search = WeatherService.forcast(lat, lon)
